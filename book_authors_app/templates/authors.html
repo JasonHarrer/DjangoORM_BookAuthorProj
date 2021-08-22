@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Book Authors Project Assignment">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <title>Books & Authors</title>
+    </head>
+    <body>
+        <div id="div-content">
+            <div id="div-form">
+                <h1>Add an Author</h1>
+                <form method=POST action="/book_add">
+                    {% csrf_token %}
+                    <div class="row">
+                        <label for="author_first_name">First Name</label>
+                        <input type="text" name="author_first_name" id="author_first_name">
+                    </div>
+                    <div class="row">
+                        <label for="author_last_name">Last Name</label>
+                        <input type="text" name="author_last_name" id="author_last_name">
+                    </div>
+                    <div class="row">
+                        <label for="author_notes">Notes</label>
+                        <textarea name="author_notes" id="author_notes"></textarea>
+                    </div>
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+            <div id="div-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for author in authors %}
+                            <tr>
+                                <td>{{ author.id }}</td>
+                                <td>{{ author.first_name }} {{ author.last_name }}</td>
+                                <td><a href="/authors/{{ author.id }}">View</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

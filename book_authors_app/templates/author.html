@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Book Authors Project Assignment">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/details.css' %}">
+        <title>Books & Authors</title>
+    </head>
+    <body>
+        <div id="div-content">
+            <div id="div-details">
+                <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+                <p id="author-id">ID: {{ author.id }}</p>
+                <div id="div-description">
+                    <span id="label-description">Notes:</span>
+                    <span id="description">{{ author.notes }}</span>
+                </div>
+            </div>
+            <div id="div-update">
+                <h3>Books:</h3>
+                <ul>
+                    {% for book in author.books.all %}
+                        <li>{{ book.title }}</li>
+                    {% endfor %}
+                </ul>
+                <form method=POST action="add_book_to_author">
+                    {% csrf_token %}
+                    <select name="add_book" id="add_book">
+                        {% for book in books %}
+                            {% if book not in author.books.all %}
+                                <option>{{ book.title }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

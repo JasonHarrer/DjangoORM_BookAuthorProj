@@ -1,0 +1,82 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+#div-content {
+    display: flex;
+    margin: 15px 10%;
+}
+
+#div-form {
+    flex: 1;
+    margin-right: 20%;
+}
+
+#div-list {
+    flex: 1;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+input, textarea, table {
+    border: solid 1px black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input[type=text] {
+    padding: 0.3rem;
+}
+
+textarea {
+    height: 5rem;
+    padding: 0.3rem;
+}
+
+th {
+    background-color: DarkBlue;
+    color: Snow;
+}
+
+tr:nth-child(odd) {
+    background-color: #cef3f7;
+}
+
+
+td {
+    border-right: solid 1px black;
+    padding: 0.3rem;
+}
+
+td a {
+    text-align: center;
+}
+
+
+.row {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.row label {
+    flex: 1;
+}
+
+.row input, .row textarea {
+    flex: 3;
+}
+
+input[type=submit] {
+    display: block;
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.8rem;
+    width: 10%;
+    margin: 0 auto;
+}

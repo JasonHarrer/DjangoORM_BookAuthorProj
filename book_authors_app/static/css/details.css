@@ -1,0 +1,59 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+}
+
+#div-content {
+    margin: 2rem 20%;
+}
+
+#div-description {
+    display: flex;
+    margin-bottom:  2rem;
+}
+
+
+#label-description {
+    flex: 1;
+}
+
+
+#description {
+    flex: 8;
+}
+
+#span {
+#    display: inline-block;
+#    margin-right: 2rem;
+#    overflow-wrap: break-word;
+#}
+
+h1 {
+    margin-bottom: 1rem;
+    font-size: xxx-large;
+}
+
+#book-id {
+    margin: 1.2rem 0;
+}
+
+
+li {
+    list-style-type: '-';
+    margin: 0.5rem 2rem;
+    padding-left: 1rem;
+}
+
+select {
+    border: solid 1px black;
+    width: 20%;
+}
+
+input[type=submit] {
+    border: solid 1px black;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem darkgray;
+    padding: 0.1rem 0.5rem;
+}
