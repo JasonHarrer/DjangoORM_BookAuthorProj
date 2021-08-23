@@ -10,6 +10,6 @@ urlpatterns = [
                 path('authors/<int:author_id>', author),
                 path('book_add', book_add),
                 path('author_add', author_add),
-                path('add_author_to_book', add_author_to_book),
-                path('add_book_to_author', add_book_to_author)
+                path('books/<int:book_id>/add_author', add_author_to_book),
+                path('authors/<int:author_id>/add_book', add_book_to_author)
               ]

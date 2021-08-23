@@ -21,15 +21,15 @@
                 <h3>Authors:</h3>
                 <ul>
                     {% for book_author in book.authors.all %}
-                        <li>{{ book_author.first_name }} {{ book_author.last_name }}</li>
+                        <li><a href="/authors/{{book_author.id}}">{{ book_author.first_name }} {{ book_author.last_name }}</a></li>
                     {% endfor %}
                 </ul>
-                <form method=POST action="add_author_to_book">
+                <form method=POST action="/books/{{book.id}}/add_author">
                     {% csrf_token %}
                     <select name="add_author" id="add_author">
                         {% for author in authors %}
                             {% if author not in book.authors.all %}
-                                <option>{{ author.first_name }} {{ author.last_name }}</option>
+                                <option value="{{author.id}}">{{ author.first_name }} {{ author.last_name }}</option>
                             {% endif %}
                         {% endfor %}
                     </select>
